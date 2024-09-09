@@ -37,3 +37,14 @@ svg{
   vertical-align: text-bottom;
 }
 
+#alertAmount{
+  position: absolute;
+  top: 13.4rem;
+}
+
+#alertTypeCard{
+  position: absolute;
+  bottom: 10.4rem;
+  left: 1.7rem;
+}
+

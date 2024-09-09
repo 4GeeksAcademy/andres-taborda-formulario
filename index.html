@@ -22,7 +22,7 @@
       Payment form example
     </h2>
     <div class="card-body">
-      <form id="paymentForm">
+      <form id="paymentForm" class="needs-validation" novalidate>
         <div class="alert alert-danger" role="alert">
           Some fields are missing
         </div>
@@ -30,16 +30,25 @@
           <div class="col-5">
             <label for="inputCardNumber" class="form-label">Card #</label>
             <input type="number" class="form-control" id="inputCardNumber" placeholder="XXXXXXXXXXXXXXXX" required>
+            <div class="invalid-feedback">
+              Please provide a valid card number.
+            </div>
           </div>
           <div class="col-3">
             <label for="inputCvcNumber" class="form-label">CVC #</label>
             <input type="number" class="form-control" id="inputCvcNumber" placeholder="0000" required>
+            <div class="invalid-feedback">
+              Please provide a valid CVC number.
+            </div>
           </div>
           <div class="col-4">
-            <label for="inputAmount" class="form-label">Amount #</label>
+            <label for="inputAmount" class="form-label">Amount</label>
             <div class="d-flex">
-              <span class="fw-bold">$</span>
+              <span class="fw-bold me-2">$</span>
               <input type="number" class="form-control" id="inputAmount" placeholder="Amount" required>
+              <div class="invalid-feedback" id="alertAmount">
+                Please provide a valid Amount.
+              </div>
             </div>
           </div>
         </div>
@@ -47,37 +56,51 @@
           <div class="col-6">
             <label for="InputFirstName" class="form-label">First Name</label>
             <input type="text" class="form-control" id="InputFirstName" aria-label="FirsName" required>
+            <div class="invalid-feedback">
+              Please provide a valid First Name.
+            </div>
           </div>
           <div class="col-6">
             <label for="InputLastName" class="form-label">Last Name</label>
             <input type="text" class="form-control" id="InputLastName" aria-label="LastName" required>
+            <div class="invalid-feedback">
+              Please provide a valid Last Name.
+            </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col-6">
             <label for="InputCity" class="form-label">City</label>
             <input type="text" class="form-control" id="InputCity" aria-label="City" required>
+            <div class="invalid-feedback">
+              Please provide a valid City.
+            </div>
           </div>
           <div class="col-3">
             <label for="selectedStates" class="form-label">State</label>
-            <select class="form-select" id="selectedStates">
-              <option selected>Pick a state</option>
-              <option value="1">One</option>
+            <select class="form-select" id="selectedStates" required>
+              <option value="">Pick a state</option>
             </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
           </div>
           <div class="col-3">
             <label for="InputPostalCode" class="form-label">Postal Code</label>
             <input type="number" class="form-control" id="InputPostalCode" aria-label="PostalCode" required>
+            <div class="invalid-feedback">
+              Please provide a valid postal code.
+            </div>
           </div>
         </div>
         <div class="row mb-4">
-          <div class="col-6">
+          <div class="col-6 form-check">
             <label class="form-label d-block">We accept:</label>
             <div class="bg-secondary p-2 d-flex align-items-center justify-content-around w-50 rounded-1"
               id="radios-container">
               <div class="d-flex align-items-center">
                 <input class="form-check-input mt-0 me-2" type="radio" value="mastercard" name="paymentMethod"
-                  id="mastercardRadio" checked>
+                  id="mastercardRadio" required>
                 <label class="form-check-label" for="mastercardRadio">
                   <i class="fa-brands fa-cc-mastercard text-white"></i>
                 </label>
@@ -139,14 +162,20 @@
                     </g>
                   </svg>
                 </label>
+                <div class="invalid-feedback" id="alertTypeCard">
+                  Please select a valid card.
+                </div>
               </div>
             </div>
           </div>
           <div class="col-6">
             <label for="messageTextArea" class="form-label">Message</label>
-            <textarea class="form-control" id="messageTextArea" style="height: 100px"
-              aria-describedby="basic-note"></textarea>
+            <textarea class="form-control" id="messageTextArea" style="height: 100px" aria-describedby="basic-note"
+              required></textarea>
             <span class="form-text" id="basic-note">Add any notes here.</span>
+            <div class="invalid-feedback">
+              Please provide a valid message.
+            </div>
           </div>
         </div>
       </form>
